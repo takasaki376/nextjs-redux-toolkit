@@ -1,16 +1,54 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .outline-solid {
+    outline: 2px solid;
+    outline-offset: 2px;
+  }
+  .transition-all {
+    transition: all 0.15s;
+  }
+  .transition-linear {
+    content: "";
+    transition: width 1s linear, opacity 0.5s ease 1s;
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@layer base {
+  html,
+  body {
+    @apply p-0 m-0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
-* {
-  box-sizing: border-box;
+.font-courier {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.button {
+  @apply appearance-none text-3xl px-3 outline-none text-purple-600 pb-1 cursor-pointer bg-purple-200 rounded-sm hover:outline-solid hover:bg-purple-400 focus:outline-solid focus:bg-purple-400 active:outline-solid active:bg-purple-400 transition-all;
+}
+
+.asyncButton {
+  @apply relative ml-2 after:block after:absolute after:w-full after:h-full after:left-0 after:top-0 after:opacity-0 after:bg-purple-600 after:transition-linear;
+}
+
+.textbox {
+  @apply text-3xl p-0.5 w-16 text-center mr-2;
+}
+.row {
+  @apply flex items-center justify-center;
 }

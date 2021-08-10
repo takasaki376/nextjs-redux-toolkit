@@ -1,8 +1,11 @@
-import { Counter } from '../features/counter/Counter'
-import styles from '../styles/Home.module.css'
-import Head from 'next/head'
+import { Counter } from "src/features/counter/Counter";
+import styles from "src/styles/Home.module.css";
+import Head from "next/head";
+import { NextPage } from "next";
+import Image from "next/image";
+import Logo from "public/logo.svg";
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -10,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className={styles.header}>
-        <img src="/logo.svg" className={styles.logo} alt="logo" />
+        <Image src={Logo} className={styles.logo} alt="logo" />
         <Counter />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -55,5 +58,6 @@ export default function Home() {
         </span>
       </header>
     </div>
-  )
-}
+  );
+};
+export default Home;
