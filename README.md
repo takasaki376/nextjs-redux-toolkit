@@ -12,18 +12,37 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 
 ## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+### インストール
 
-```bash
-npx create-next-app --example with-redux-toolkit with-redux-toolkit-app
-# or
-yarn create next-app --example with-redux-toolkit with-redux-toolkit-app
+#### テンプレートからインストール
+
+`yarn create next-app --example with-redux-toolkit . `
+
+next.config.js 作成
+
+#### typescript
+
+```
+yarn add --dev typescript @types/react @types/node
+touch tsconfig.json
+yarn dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+#### ESLint
 
-### TypeScript Setup (optional)
+```
+yarn add -D eslint eslint-config-next eslint-config-prettier prettier
+yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
 
-If you haven't already added [TypeScript](https://www.typescriptlang.org/) to your project, follow the [steps in the Next.js documentation](https://nextjs.org/docs/basic-features/typescript). If you are new to TypeScript, go through the Next.js [learning lesson on TypeScript](https://nextjs.org/learn/excel/TypeScript).
+.eslintrc.js、.eslintignore 作成
+package.json に lint コマンド追加
 
-Once TypeScript is added, follow the instructions given on the Redux Toolkit [documentation](https://redux-toolkit.js.org/tutorials/TypeScript) to set up and use Redux Toolkit and React-Redux with TypeScript
+#### tailwind.css
+
+```
+yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest
+npx tailwindcss init -p
+```
+
+tailwind.config.js 編集
